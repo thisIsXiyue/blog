@@ -1,3 +1,5 @@
+import styles from './page.module.css';
+import cn from 'classnames';
 
 interface PostProps {
   post: {
@@ -12,10 +14,14 @@ interface PostProps {
 
 export default function Post({ post }: PostProps) {
   return (
-    <div>
-      <h1>{post.metadata.title}</h1>
-      <p>{post.metadata.location} - {post.metadata.year}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    <div className={styles.page}>
+      <div className={styles.side}>
+        <h1 className={styles.title}>{post.metadata.title}</h1>
+        <div className={styles.location}>{post.metadata.year}</div>
+      </div>
+      <div className={styles.content}>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      </div>
     </div>
   );
 }

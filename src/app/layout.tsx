@@ -2,16 +2,38 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const labelleaurore = localFont({
+  src: "./fonts/LaBelleAurore-Regular.ttf",
+  variable: "--font-labelleaurore",
+  weight: "400",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+const amiri = localFont({
+  src: [
+    {
+      path: './fonts/Amiri-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Amiri-BoldItalic.ttf',
+      weight: '700',
+      style: 'italic',
+    },
+    {
+      path: './fonts/Amiri-Italic.ttf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: './fonts/Amiri-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: "--font-amiri",
+  weight: "400 700"
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +47,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={`${amiri.variable} ${labelleaurore.variable}`}>
+        <div className="outerPage">
+          <div className="page">
+            <div className="innerPage">
+              {children}
+            </div>
+            <footer className="copyright">©2025 xiyue zhang</footer>
+          </div>
+        </div>
       </body>
     </html>
   );

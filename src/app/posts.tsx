@@ -33,13 +33,17 @@ export default function PostsComponent({ posts, locations }: PostsComponentProps
             className={cn(
               styles.location,
               location.toLowerCase() === "shanghai" ? styles.shanghai : '',
+              selectedLocation === location ? styles.selected : ''
             )}
             onClick={() => setSelectedLocation(location)}>{location}</div>
         ))}
       </div>
       <div className={styles.posts}>
         {filteredPosts.map((post) => (
-          <div key={post.slug}>
+          <div key={post.slug} className={cn(
+            styles.post,
+            post.metadata.location.toLowerCase() === "shanghai" ? styles.shanghai : '',
+          )}>
             <Link href={`/posts/${post.slug}`}>
               {post.metadata.title}, {post.metadata.year}
             </Link>

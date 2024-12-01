@@ -13,14 +13,8 @@ export default function Home() {
   const locations = [...new Set(posts.map(post => post.metadata.location))];
 
   return (
-    <div className={styles.outerPage}>
-      <div className={styles.page}>
-        <div className={styles.innerPage}>
-          <PostsComponent posts={posts} locations={locations} />
-        </div>
-        <footer className={styles.copyright}>©2025 xiyue zhang</footer>
-      </div>
-
-    </div>
+    <>
+      <PostsComponent posts={posts} locations={locations} />
+    </>
   );
 }
