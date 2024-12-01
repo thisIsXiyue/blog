@@ -1,5 +1,4 @@
 import styles from './page.module.css';
-import cn from 'classnames';
 
 interface PostProps {
   post: {

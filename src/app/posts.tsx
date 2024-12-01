@@ -8,7 +8,7 @@ import { useState } from 'react';
 interface Post {
   slug: string;
   metadata: {
-    [key: string]: any;
+    [key: string]: string;
   };
   content: string;
 }

@@ -1,7 +1,5 @@
 
 import { getAllPosts } from '../lib/posts';
-import styles from './page.module.css';
-import cn from 'classnames';
 import PostsComponent from './posts';
 
 
